@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* EduTok Color System - HSL Format */
+    --background: 210 100% 98%;
+    --foreground: 222 47% 11%;
+
+    /* Primary Blue to Purple Gradient */
+    --primary: 207 90% 54%; /* Blue #2196F3 */
+    --primary-foreground: 0 0% 100%;
+    --primary-purple: 245 58% 61%; /* Purple #6366F1 */
+    
+    /* Secondary Colors */
+    --secondary: 122 39% 49%; /* Green #4CAF50 */
+    --secondary-foreground: 0 0% 100%;
+    
+    --accent: 340 82% 52%; /* Pink #E91E63 */
+    --accent-foreground: 0 0% 100%;
+    
+    --light-blue: 207 73% 82%; /* Light Blue #BBDEFB */
+    --light-blue-foreground: 222 47% 11%;
+
+    /* UI Elements */
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 207 90% 54%;
+
+    --radius: 1rem;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(207, 90%, 54%), hsl(245, 58%, 61%));
+    --gradient-success: linear-gradient(135deg, hsl(122, 39%, 49%), hsl(122, 39%, 59%));
+    --gradient-accent: linear-gradient(135deg, hsl(340, 82%, 52%), hsl(340, 82%, 62%));
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    --shadow-glow: 0 0 20px hsl(207 90% 54% / 0.3);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 15%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 15%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 207 90% 54%;
+    --primary-foreground: 0 0% 100%;
+    --primary-purple: 245 58% 61%;
+
+    --secondary: 122 39% 49%;
+    --secondary-foreground: 0 0% 100%;
+
+    --accent: 340 82% 52%;
+    --accent-foreground: 0 0% 100%;
+
+    --light-blue: 207 73% 82%;
+    --light-blue-foreground: 222 47% 11%;
+
+    --muted: 217 33% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 18%;
+    --input: 217 33% 18%;
+    --ring: 207 90% 54%;
+
+    --shadow-glow: 0 0 20px hsl(207 90% 54% / 0.5);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Hide scrollbar for vertical feed */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
